@@ -1,4 +1,26 @@
-@import '@fontsource/fira-mono';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* add fonts from /fonts/amplitudewide-book.ttf, /fonts/amplitudewide-medium.ttf and static/fonts/amplitudewide-regular.ttf */
+@font-face {
+	font-family: 'Amplitude Wide';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url('/fonts/amplitudewide-book.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Amplitude Wide';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/amplitudewide-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Amplitude Wide';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/amplitudewide-medium.ttf') format('truetype');
+}

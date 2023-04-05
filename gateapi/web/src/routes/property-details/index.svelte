@@ -9,8 +9,7 @@
 	import Bed from '../../icons/bed.svelte'
 	import Bathtub from '../../icons/bathtub.svelte'
 	import Persons from '../../icons/persons.svelte'
-
-	type PropertyType = 'single' | 'multi' | 'town' | 'condo'
+	import type { PropertyType } from '../../types'
 
 	let selectedBeds = ''
 	const optionsBeds = [

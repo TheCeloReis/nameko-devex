@@ -1,15 +1,14 @@
 <script lang="ts">
-	export let value: 'single' | 'multi' | 'town' | 'condo' = 'multi'
-	export let onSelect: (
-		value: 'single' | 'multi' | 'town' | 'condo'
-	) => void = () => {}
+	export let value: PropertyType = 'multi'
+	export let onSelect: (value: PropertyType) => void = () => {}
 
+	import type { PropertyType } from '../types'
 	import Condo from '../icons/condo.svelte'
 	import SingleFamily from '../icons/singleFamily.svelte'
 	import MultiFamily from '../icons/multiFamily.svelte'
 	import Townhome from '../icons/townhome.svelte'
 
-	const propertyTypes = [
+	const propertyTypes: { id: PropertyType; label: string; icon: any }[] = [
 		{ id: 'single', label: 'Single-Family', icon: SingleFamily },
 		{ id: 'multi', label: 'Multi-Family', icon: MultiFamily },
 		{ id: 'town', label: 'Townhome', icon: Townhome },

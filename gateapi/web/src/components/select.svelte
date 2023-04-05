@@ -8,7 +8,7 @@
 	export let options: Array<{ value: string; label: string }> = []
 	export let selectedValue = ''
 	export let onSelect: (value: string) => void = () => {}
-	export let icon: typeof SvelteComponent = null
+	export let icon: any = null
 
 	let isOpen = false
 	let buttonElement

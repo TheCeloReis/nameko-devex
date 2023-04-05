@@ -60,6 +60,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Property details</title>
+</svelte:head>
+
 <div class="w-full max-w-4xl m-auto px-6 sm:px-8">
 	<header class="mt-16 grid grid-cols-2 gap-8 sm:min-h-[222px] mb-8 sm:mb-0">
 		<div class="col-span-2 sm:col-span-1">

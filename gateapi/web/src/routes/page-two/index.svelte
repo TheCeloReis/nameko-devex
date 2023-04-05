@@ -36,6 +36,12 @@
 	onMount(fetchOrder)
 </script>
 
+<svelte:head>
+	{#if orderId}
+		<title>Order #{orderId}</title>
+	{/if}
+</svelte:head>
+
 <main class="max-w-4xl mx-auto py-6">
 	{#if isLoading}
 		<p class="text-center text-gray-600">Loading order...</p>

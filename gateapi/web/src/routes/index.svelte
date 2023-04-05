@@ -6,8 +6,17 @@
 	<title>Home</title>
 </svelte:head>
 
-<main>
-	{#each Object.entries(ROUTES) as [name, route]}
-		<a class="mx-2 text-blue-400 underline" href={route}>{name}</a>
-	{/each}
-</main>
+<div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+	<div class="max-w-lg w-full">
+		<main class="flex flex-col items-center space-y-4">
+			{#each Object.entries(ROUTES) as [name, route]}
+				<a
+					class="w-full py-4 px-6 text-center bg-white hover:bg-primary-lightest rounded-md shadow-md transition duration-300 text-primary border-2 border-primary"
+					href={route}
+				>
+					{name}
+				</a>
+			{/each}
+		</main>
+	</div>
+</div>

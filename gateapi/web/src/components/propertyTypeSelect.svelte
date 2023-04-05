@@ -7,6 +7,7 @@
 	import SingleFamily from '../icons/singleFamily.svelte'
 	import MultiFamily from '../icons/multiFamily.svelte'
 	import Townhome from '../icons/townhome.svelte'
+	import clsx from 'clsx'
 
 	const propertyTypes: { id: PropertyType; label: string; icon: any }[] = [
 		{ id: 'single', label: 'Single-Family', icon: SingleFamily },
@@ -19,7 +20,7 @@
 <div class="mb-8">
 	<p>Property Type</p>
 
-	<ul class="grid grid-cols-4 gap-5">
+	<ul class="grid grid-cols-2 sm:grid-cols-4 gap-5">
 		{#each propertyTypes as { id, label, icon: Icon }}
 			<li class="h-[72px] w-full">
 				<button
@@ -31,8 +32,10 @@
 				>
 					<Icon className={value === id ? 'fill-primary' : 'fill-text'} />
 					<span
-						class="text-medium {value === id ? 'text-primary' : 'text-text'}"
-						>{label}</span
+						class={clsx(
+							"text-medium {value === id ? 'text-primary' : 'text-text'}",
+							'text-sm sm:text-base'
+						)}>{label}</span
 					>
 				</button>
 			</li>

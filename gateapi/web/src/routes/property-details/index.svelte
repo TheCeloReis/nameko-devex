@@ -60,9 +60,9 @@
 	}
 </script>
 
-<div class="w-full max-w-4xl m-auto px-8">
-	<header class="mt-16 grid grid-cols-2 gap-8">
-		<div>
+<div class="w-full max-w-4xl m-auto px-6 sm:px-8">
+	<header class="mt-16 grid grid-cols-2 gap-8 sm:min-h-[222px] mb-8 sm:mb-0">
+		<div class="col-span-2 sm:col-span-1">
 			<h1 class="text-3xl mb-4">Property details</h1>
 
 			<p class="text">
@@ -72,14 +72,18 @@
 			</p>
 		</div>
 
-		<img
-			class="w-[350px] h-[223px] place-self-end"
-			src="/images/illustration-propertyPage.png"
-			alt=""
-		/>
+		<div class="max-w-[350px] w-full place-self-end hidden sm:block">
+			<div class="relative w-full pt-[63.71%]">
+				<img
+					class="w-full h-full absolute inset-0"
+					src="/images/illustration-propertyPage.png"
+					alt=""
+				/>
+			</div>
+		</div>
 	</header>
 
-	<div class="w-1/2 pr-4 space-y-4 -mt-14 mb-8">
+	<div class="sm:w-1/2 sm:pr-4 space-y-4 sm:-mt-8 md:-mt-14 mb-8">
 		<TextField label="Property name" />
 		<TextField label="Address" />
 	</div>
@@ -92,14 +96,14 @@
 		<div
 			class="p-6 border border-primary-lighter space-y-6 rounded shadow-xl mb-16"
 		>
-			<div class="grid grid-cols-4 gap-6">
+			<div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
 				<TextField label="Unit name" placeholder="Name and/or number" />
 				<TextField label="Rent" preInput={Cash} postInput="/mo" />
 				<TextField label="Deposit" preInput={Cash} postInput="/mo" />
 				<TextField label="Lease Length (months)" />
 			</div>
 
-			<div class="grid grid-cols-5 gap-6">
+			<div class="grid grid-cols-1 sm:grid-cols-5 gap-6">
 				<Select
 					options={optionsBeds}
 					selectedValue={selectedBeds}
@@ -135,7 +139,7 @@
 		</div>
 	</div>
 
-	<div class="flex justify-between">
+	<div class="flex justify-between mb-8">
 		<Button label="Back" variant="outlined" />
 		<Button label="Continuar" />
 	</div>

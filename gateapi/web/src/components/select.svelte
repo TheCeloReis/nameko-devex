@@ -109,7 +109,7 @@
 			tabindex="0"
 			role="listbox"
 			aria-label="Select options"
-			class="absolute w-full mt-1 top-16 bg-white border border-gray-300 rounded shadow"
+			class="absolute w-full mt-1 top-16 bg-white border border-gray-300 rounded shadow z-50"
 			on:blur={handleListBlur}
 			on:keydown={handleListKeyDown}
 		>

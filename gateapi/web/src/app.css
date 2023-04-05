@@ -24,3 +24,7 @@
 	font-display: swap;
 	src: url('/fonts/amplitudewide-medium.ttf') format('truetype');
 }
+
+html {
+	@apply text-text;
+}

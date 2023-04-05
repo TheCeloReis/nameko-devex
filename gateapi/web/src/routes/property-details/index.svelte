@@ -1,3 +1,143 @@
-<div class="flex w-full justify-center">
-	<div class="text-3xl">Property details</div>
+<script lang="ts">
+	import Button from '../../components/button.svelte'
+	import TextField from '../../components/textField.svelte'
+	import Select from '../../components/select.svelte'
+	import DatePicker from '../../components/datePicker.svelte'
+	import PropertyTypeSelect from '../../components/propertyTypeSelect.svelte'
+
+	import Cash from '../../icons/cash.svelte'
+	import Bed from '../../icons/bed.svelte'
+	import Bathtub from '../../icons/bathtub.svelte'
+	import Persons from '../../icons/persons.svelte'
+
+	type PropertyType = 'single' | 'multi' | 'town' | 'condo'
+
+	let selectedBeds = ''
+	const optionsBeds = [
+		{ value: '1', label: '1' },
+		{ value: '2', label: '2' },
+		{ value: '3', label: '3' },
+		{ value: '4', label: '4+' },
+	]
+	function handleSelectBed(value) {
+		selectedBeds = value
+	}
+
+	let selectedBaths = ''
+	const optionsBaths = [
+		{ value: '1', label: '1' },
+		{ value: '2', label: '2' },
+		{ value: '3', label: '3+' },
+	]
+	function handleSelectBath(value) {
+		selectedBaths = value
+	}
+
+	let selectedVacancy = ''
+	const optionsVacancy = [
+		{ value: '1', label: '1' },
+		{ value: '2', label: '2' },
+		{ value: '3', label: '3' },
+		{ value: '4', label: '4' },
+		{ value: '5', label: '5' },
+		{ value: '6', label: '6' },
+		{ value: '7', label: '7' },
+		{ value: '8', label: '8' },
+		{ value: '9', label: '9' },
+		{ value: '10', label: '10+' },
+	]
+	function handleSelectVacancy(value) {
+		selectedVacancy = value
+	}
+
+	let availableOn: Date
+	function handleAvailableOn(value) {
+		availableOn = value
+	}
+
+	let propertyType: PropertyType
+	function handlePropertyType(value: PropertyType) {
+		propertyType = value
+	}
+</script>
+
+<div class="w-full max-w-4xl m-auto px-8">
+	<header class="mt-16 grid grid-cols-2 gap-8">
+		<div>
+			<h1 class="text-3xl mb-4">Property details</h1>
+
+			<p class="text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+				veniam.
+			</p>
+		</div>
+
+		<img
+			class="w-[350px] h-[223px] place-self-end"
+			src="/images/illustration-propertyPage.png"
+			alt=""
+		/>
+	</header>
+
+	<div class="w-1/2 pr-4 space-y-4 -mt-14 mb-8">
+		<TextField label="Property name" />
+		<TextField label="Address" />
+	</div>
+
+	<PropertyTypeSelect value={propertyType} onSelect={handlePropertyType} />
+
+	<div>
+		<p class="mb-2 font-medium">Unit info</p>
+
+		<div
+			class="p-6 border border-primary-lighter space-y-6 rounded shadow-xl mb-16"
+		>
+			<div class="grid grid-cols-4 gap-6">
+				<TextField label="Unit name" placeholder="Name and/or number" />
+				<TextField label="Rent" preInput={Cash} postInput="/mo" />
+				<TextField label="Deposit" preInput={Cash} postInput="/mo" />
+				<TextField label="Lease Length (months)" />
+			</div>
+
+			<div class="grid grid-cols-5 gap-6">
+				<Select
+					options={optionsBeds}
+					selectedValue={selectedBeds}
+					onSelect={handleSelectBed}
+					label="Beds"
+					icon={Bed}
+				/>
+
+				<Select
+					options={optionsBaths}
+					selectedValue={selectedBaths}
+					onSelect={handleSelectBath}
+					label="Baths"
+					icon={Bathtub}
+				/>
+
+				<TextField label="Sq. Ft." />
+
+				<DatePicker
+					date={availableOn}
+					onDateChange={handleAvailableOn}
+					label="Available on"
+				/>
+
+				<Select
+					options={optionsVacancy}
+					selectedValue={selectedVacancy}
+					onSelect={handleSelectVacancy}
+					label="Vacancy"
+					icon={Persons}
+				/>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex justify-between">
+		<Button label="Back" variant="outlined" />
+		<Button label="Continuar" />
+	</div>
 </div>

@@ -38,5 +38,16 @@ class HttpEntrypoint(HttpRequestHandler):
             mimetype='application/json'
         )
 
+    def add_cors_headers(self, response):
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+
+    def __call__(self, request):
+        response = super().__call__(request)
+        self.add_cors_headers(response)
+        return response
+
+
 
 http = HttpEntrypoint.decorator

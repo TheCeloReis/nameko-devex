@@ -18,7 +18,7 @@
 </script>
 
 <div class="mb-8">
-	<p>Property Type</p>
+	<p class="mb-1 font-medium">Property Type</p>
 
 	<ul class="grid grid-cols-2 sm:grid-cols-4 gap-5">
 		{#each propertyTypes as { id, label, icon: Icon }}
@@ -26,15 +26,17 @@
 				<button
 					class="rounded border w-full h-full flex items-center justify-center space-x-3 transition-colors
 						{value === id
-						? 'border-primary bg-primary-lightest'
-						: 'border-primary-lighter bg-white hover:bg-primary-lightest'}"
+						? 'border-primary bg-border-color'
+						: 'border-primary-lighter bg-white hover:bg-border-color'}"
 					on:click={() => onSelect(id)}
 				>
-					<Icon className={value === id ? 'fill-primary' : 'fill-text'} />
+					<Icon
+						className={value === id ? 'fill-primary' : 'fill-primary-darker'}
+					/>
 					<span
 						class={clsx(
-							"text-medium {value === id ? 'text-primary' : 'text-text'}",
-							'text-sm sm:text-base'
+							value === id ? 'text-primary' : 'text-primary-darker',
+							'text-medium text-sm sm:text-base'
 						)}>{label}</span
 					>
 				</button>

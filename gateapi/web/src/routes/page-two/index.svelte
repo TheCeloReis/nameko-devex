@@ -52,7 +52,7 @@
 	{:else}
 		<h1 class="text-2xl font-medium mb-4">Order #{orderId}</h1>
 		<table class="w-full table-fixed border-collapse">
-			<thead class="bg-primary-lightest">
+			<thead class="bg-border-color">
 				<tr>
 					<th class="w-1/6 px-4 py-2 border">Image</th>
 					<th class="w-1/3 px-4 py-2 border">Product</th>

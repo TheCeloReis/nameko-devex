@@ -4,9 +4,9 @@
 
 /* add fonts from /fonts/amplitudewide-book.ttf, /fonts/amplitudewide-medium.ttf and static/fonts/amplitudewide-regular.ttf */
 @font-face {
-	font-family: 'Amplitude Wide';
+	font-family: 'Amplitude Wide Book';
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 400;
 	font-display: swap;
 	src: url('/fonts/amplitudewide-book.ttf') format('truetype');
 }
@@ -26,5 +26,5 @@
 }
 
 html {
-	@apply text-text;
+	@apply text-primary-darker;
 }

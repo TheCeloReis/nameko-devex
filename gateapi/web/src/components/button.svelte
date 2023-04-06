@@ -9,10 +9,10 @@
 
 <button
 	class={clsx(
-		'border border-primary uppercase p-3 font-medium rounded-full min-w-[7.75rem] leading-4',
+		'border border-primary-light uppercase p-3 font-medium rounded-full min-w-[7.75rem] leading-4 transition font-inter',
 		variant === 'filled'
-			? 'bg-primary text-white hover:opacity-80 transition-opacity'
-			: 'bg-white text-text'
+			? 'bg-primary-light text-white hover:bg-primary'
+			: 'bg-white text-primary-darker hover:bg-border-color'
 	)}
 	{type}
 	on:click={onClick}>{label}</button

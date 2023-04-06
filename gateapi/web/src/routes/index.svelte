@@ -11,7 +11,7 @@
 		<main class="flex flex-col items-center space-y-4">
 			{#each Object.entries(ROUTES) as [name, route]}
 				<a
-					class="w-full py-4 px-6 text-center bg-white hover:bg-primary-lightest rounded-md shadow-md transition duration-300 text-primary border-2 border-primary"
+					class="w-full py-4 px-6 text-center bg-white hover:bg-border-color rounded-md shadow-md transition duration-300 text-primary border-2 border-primary"
 					href={route}
 				>
 					{name}

@@ -11,6 +11,11 @@
 	import Persons from '../../icons/persons.svelte'
 	import type { PropertyType } from '../../types'
 
+	let address = '21 Jump Street, Los Angeles, California'
+	function handleAddress(value) {
+		address = value
+	}
+
 	let selectedBeds = ''
 	const optionsBeds = [
 		{ value: '1', label: '1' },
@@ -64,19 +69,23 @@
 	<title>Property details</title>
 </svelte:head>
 
-<div class="w-full max-w-4xl m-auto px-6 sm:px-8">
-	<header class="mt-16 grid grid-cols-2 gap-8 sm:min-h-[222px] mb-8 sm:mb-0">
-		<div class="col-span-2 sm:col-span-1">
-			<h1 class="text-3xl mb-4">Property details</h1>
+<div class="w-full max-w-[876px] m-auto px-6 sm:px-8">
+	<header
+		class="mt-16 grid sm:grid-cols-2 gap-4 sm:gap-8 sm:min-h-[222px] mb-8 sm:mb-0"
+	>
+		<div class="">
+			<h1 class="text-4xl leading-9 mb-4">Property details</h1>
 
-			<p class="text">
+			<p class="font-amplitudeBook">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 				veniam.
 			</p>
 		</div>
 
-		<div class="max-w-[350px] w-full place-self-end hidden sm:block">
+		<div
+			class="max-w-[350px] w-2/3 sm:w-full place-self-end grid place-items-end"
+		>
 			<div class="relative w-full pt-[63.71%]">
 				<img
 					class="w-full h-full absolute inset-0"
@@ -87,9 +96,9 @@
 		</div>
 	</header>
 
-	<div class="sm:w-1/2 sm:pr-4 space-y-4 sm:-mt-8 md:-mt-14 mb-8">
+	<div class="sm:w-1/2 sm:pr-2 space-y-4 sm:-mt-8 md:-mt-14 mb-8">
 		<TextField label="Property name" />
-		<TextField label="Address" />
+		<TextField label="Address" value={address} onInput={handleAddress} />
 	</div>
 
 	<PropertyTypeSelect value={propertyType} onSelect={handlePropertyType} />
@@ -145,6 +154,6 @@
 
 	<div class="flex justify-between mb-8">
 		<Button label="Back" variant="outlined" />
-		<Button label="Continuar" />
+		<Button label="Continue" />
 	</div>
 </div>

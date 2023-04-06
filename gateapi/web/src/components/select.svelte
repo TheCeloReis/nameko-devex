@@ -93,12 +93,12 @@
 	</button>
 
 	{#if icon}
-		<span class="absolute left-3 top-8 transform">
+		<span class="absolute left-3 top-8">
 			<svelte:component this={icon} />
 		</span>
 	{/if}
 
-	<span class="absolute right-3 top-10 transform">
+	<span class="absolute right-3 top-10">
 		<ArrowDown />
 	</span>
 
@@ -109,7 +109,7 @@
 			tabindex="0"
 			role="listbox"
 			aria-label="Select options"
-			class="absolute w-full mt-1 top-16 bg-white border border-gray-300 rounded shadow z-50"
+			class="absolute w-full mt-1 top-16 bg-white border border-gray-300 rounded shadow z-50 font-amplitudeBook"
 			on:blur={handleListBlur}
 			on:keydown={handleListKeyDown}
 		>

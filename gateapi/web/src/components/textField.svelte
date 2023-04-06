@@ -27,7 +27,7 @@
 
 	<div class="relative">
 		{#if preInput}
-			<span class="absolute left-3 top-3.5 text-sm">
+			<span class="absolute left-3 top-3.5 text-sm fill-primary-dark">
 				<svelte:component this={preInput} />
 			</span>
 		{/if}
@@ -38,13 +38,16 @@
 			{placeholder}
 			on:input={handleInput}
 			class={clsx(
-				'h-12 border border-primary-lighter rounded px-3 py-3.5 leading-4 focus:outline-none focus:border-primary w-full',
+				'h-12 border border-primary-lighter rounded px-3 py-3.5 leading-4 focus:outline-none focus:border-primary w-full font-amplitudeBook',
 				preInput && 'pl-10',
 				postInput && 'pr-10'
 			)}
 		/>
 		{#if postInput}
-			<span class="absolute right-3 top-4 text-sm">{postInput}</span>
+			<span
+				class="absolute right-3 top-4 text-sm text-primary-dark pointer-events-none select-none font-amplitudeBook"
+				>{postInput}</span
+			>
 		{/if}
 	</div>
 </div>

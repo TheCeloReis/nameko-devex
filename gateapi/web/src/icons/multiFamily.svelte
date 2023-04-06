@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let className: string = 'fill-text'
+	export let className: string = 'fill-primary-darker'
 </script>
 
 <svg
